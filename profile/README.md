@@ -87,6 +87,10 @@
 
 ### Client
 
+![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![Protocol Buffers](https://img.shields.io/badge/Protocol%20Buffers-4285F4?style=for-the-badge&logo=protobuf&logoColor=white)
+
 | 분류 | 기술 |
 |------|------|
 | 게임 엔진 | **Unity** (C#) |
@@ -98,9 +102,17 @@
 
 ### Backend — Node.js (TCP, 포커)
 
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Protocol Buffers](https://img.shields.io/badge/Protocol%20Buffers-4285F4?style=for-the-badge&logo=protobuf&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)
+![Yarn](https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white)
+
 | 분류 | 기술 |
 |------|------|
 | 런타임 | **Node.js ≥ 20** (ES Module) |
+| 패키지 매니저 | **Yarn** |
 | 네트워크 | TCP (`net` 모듈) |
 | 직렬화 | **Protocol Buffers** (`protobufjs`) |
 | DB | **PostgreSQL** (`pg`) |
@@ -109,6 +121,11 @@
 | 개발 | `nodemon`, `dotenv` |
 
 ### Backend — C++ (UDP, 로비/결투)
+
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white)
 
 | 분류 | 기술 |
 |------|------|
@@ -121,6 +138,12 @@
 
 ### Infrastructure
 
+![AWS EC2](https://img.shields.io/badge/Amazon%20EC2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white)
+![AWS RDS](https://img.shields.io/badge/Amazon%20RDS-527FFF?style=for-the-badge&logo=amazonrds&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Windows Server](https://img.shields.io/badge/Windows%20Server-0078D4?style=for-the-badge&logo=windows&logoColor=white)
+
 | 분류 | 기술 |
 |------|------|
 | 배포 환경 | **AWS EC2** (Microsoft Windows Server 2022 Core Base) |
@@ -129,12 +152,21 @@
 
 ### Tools
 
+![Cursor](https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white)
+![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)
+![Cursor MCP](https://img.shields.io/badge/Cursor%20MCP-Model%20Context%20Protocol-000000?style=for-the-badge&logo=cursor&logoColor=white)
+
 | 분류 | 기술 |
 |------|------|
 | AI 코드 어시스턴트 | **Cursor** |
+| IDE | **Visual Studio 2022** |
+| 에디터 연동 | **Cursor MCP** (Model Context Protocol — Unity 연동) |
 | 버전 관리 | Git, GitHub |
-| 패킷 디버깅 | Unity 클라이언트 · 서버 로그 검증 |
-| API/패킷 테스트 | 자체 Node.js 클라이언트 스크립트 |
+| 개발 | **Nodemon** |
+| 패킷 디버깅 | Unity 클라이언트 · 서버 로그 직접 검증 |
 
 ---
 
