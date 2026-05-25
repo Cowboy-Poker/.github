@@ -12,7 +12,17 @@
 - **TCP 9000** : 로그인 / 포커 게임 (Node.js 서버)
 - **UDP 7777** : 로비 / 1:1 결투 동기화 (C++ 서버)
 
-> Unity 클라이언트를 실행하면 위 주소로 자동 접속됩니다.
+### **게임 다운로드**
+
+- **[Cowboy-Poker.zip (Google Drive)](https://drive.google.com/file/d/1z7wfaax3R4iI4KOXsb4uiNbRG74qOQ4O/view?usp=drive_link)** — Windows 클라이언트 빌드
+- **[Cowboy-Poker-Mac.zip (Google Drive)](https://drive.google.com/file/d/1229p3k6aeIJlDwz61SIovLmufxIVqIZt/view?usp=drive_link)** — macOS 클라이언트 빌드
+
+### **접속 방법**
+1. 위 링크에서 OS에 맞는 클라이언트(`Cowboy-Poker.zip` / `Cowboy-Poker-Mac.zip`)를 다운로드해 압축을 풀고 실행합니다.
+2. 로그인 화면에서 **호스트 주소** `3.36.159.29`와 **포트** `9000`을 입력합니다.
+3. 아이디·비밀번호를 입력해 접속합니다.
+
+> UDP 로비/결투(`7777`)는 TCP 로그인 성공 후 클라이언트가 자동으로 연결합니다.
 
 ---
 
@@ -205,6 +215,8 @@ user:{userId}  (Hash)
    - 비밀번호는 `bcrypt`로 해시되어 PostgreSQL에 저장됩니다.
    - 로그인 성공 시 마지막 접속 상태(씬, HP, 위치, 무기, 잔액 등)를 Redis에서 복원해 클라이언트에 한 번에 내려줍니다.
 
+<br>
+
 2. **로비 → 살롱 이동**
 
 <p align="center">
@@ -216,6 +228,8 @@ user:{userId}  (Hash)
    - 로비 내 이동은 `C_LOBBY_MOVE`로 좌표를 서버에 전송하고, 서버는 동일 로비의 다른 유저들에게 `S_LOBBY_PLAYER_MOVE`를 브로드캐스트합니다.
    - 10초 동안 하트비트가 없으면 자동 퇴장 처리(`S_LOBBY_PLAYER_LEAVE`)됩니다.
 
+<br>
+
 3. **포커 방 입장 / 생성**
 
 <p align="center">
@@ -225,6 +239,8 @@ user:{userId}  (Hash)
    - 술집 로비에서 포커 테이블에 앉으면 `C_GetRoomList`로 현재 방 목록을 받아옵니다.
    - 방 이름, 최대 인원(최대 5명), 빅 블라인드 금액을 설정해 새 방을 만들 수 있습니다.
    - 진행 중인 게임에 입장하면 다음 핸드부터 자동 합류됩니다.
+
+<br>
 
 4. **텍사스 홀덤 포커 진행**
 
@@ -246,6 +262,8 @@ user:{userId}  (Hash)
   <img src="./assets/Poker_Player_4.gif" width="700" alt="4인 포커 올인 후 잔액 0원"/>
 </p>
 
+<br>
+
 5. **쇼다운 및 결과 정산**
 
 <p align="center">
@@ -257,6 +275,8 @@ user:{userId}  (Hash)
    - 패배자들(FOLD 제외)에게는 승자의 패가 보여집니다.
    - 결과 발표 후 10초 대기 시간이 지나면 다음 핸드가 자동으로 시작됩니다.
 
+<br>
+
 6. **포커 → 1:1 권총 결투 연계**
 
 <p align="center">
@@ -266,6 +286,8 @@ user:{userId}  (Hash)
    - 포커 진행 중 같은 방의 플레이어에게 `C_BattleRequest`를 보내 결투를 신청할 수 있습니다.
    - 양측 모두 수락하면 자동 폴드 처리 후 핸드가 종료되고, 두 플레이어는 슈팅 씬으로 이동합니다.
    - 결투 씬에서는 C++ UDP 서버가 위치·발사·피격을 실시간으로 동기화합니다.
+
+<br>
 
 7. **무기 상점 시스템**
 
@@ -282,15 +304,19 @@ user:{userId}  (Hash)
   <img src="./assets/scar_rifle.gif" width="700" alt="라이플 탄흔 디테일"/>
 </p>
 
+<br>
+
 8. **3D 슈팅 결투 (Duel)**
 
 <p align="center">
   <img src="./assets/battle_scene.gif" width="700" alt="배틀 씬"/>
 </p>
 
-   - WASD로 이동, 마우스로 시점 조작, 좌클릭으로 사격합니다.
+   - **WASD** 이동 · **Space** 점프 · **마우스** 시점 조작 · **우클릭** 조준 · **좌클릭** 사격 · **R** 재장전
    - 머리/몸통/팔다리 부위별로 다른 데미지가 적용되며, 서버가 HP를 차감하고 양측에 결과를 통보합니다.
    - 패배자(`C_USER_LOSE`)의 잔액 전액이 승자에게 이전되고 계정이 삭제되며, 승자 플레이어는 자동으로 로비로 복귀합니다.
+
+<br>
 
 9. **호텔 휴식 시스템**
 
@@ -300,6 +326,8 @@ user:{userId}  (Hash)
 
    - 결투에서 입은 부상은 자동으로 회복되지 않습니다.
    - 호텔에서 `$1,000`을 지불하면 HP를 100으로 회복할 수 있습니다.
+
+<br>
 
 10. **연결 끊김 / 재접속 복원**
     - 게임 중 소켓이 끊기면 자동으로 폴드 처리됩니다.
