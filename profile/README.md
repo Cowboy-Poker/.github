@@ -118,10 +118,10 @@
 
 | 저장소 | 역할 | 언어 |
 |--------|------|------|
-| [`cowboy-poker-server-node`](https://github.com/znfnfns0365/cowboy-poker-server-node) | 로그인 · 회원가입 · 포커 게임 · 베팅 · 정산 (TCP) | Node.js |
-| [`cowboy-poker-server-cpp`](https://github.com/znfnfns0365/cowboy-poker-server-cpp) | 로비 동기화 · 1:1 권총 결투 (UDP) | C++17 |
-| [`cowboy-poker-protocols`](https://github.com/znfnfns0365/cowboy-poker-protocols) | `.proto` 파일 · packetTypes (Node.js / C++ / C# 공유) | Protobuf |
-| [`cowboy-poker-client-unity`](https://github.com/znfnfns0365/cowboy-poker-client-unity) | Unity 게임 클라이언트 (비공개) | C# |
+| [`cowboy-poker-server-node`](https://github.com/Cowboy-Poker/cowboy-poker-server-node) | 로그인 · 회원가입 · 포커 게임 · 베팅 · 정산 (TCP) | Node.js |
+| [`cowboy-poker-server-cpp`](https://github.com/Cowboy-Poker/cowboy-poker-server-cpp) | 로비 동기화 · 1:1 권총 결투 (UDP) | C++17 |
+| [`cowboy-poker-protocols`](https://github.com/Cowboy-Poker/cowboy-poker-protocols) | `.proto` 파일 · packetTypes (Node.js / C++ / C# 공유) | Protobuf |
+| [`cowboy-poker-client-unity`](https://github.com/Cowboy-Poker/cowboy-poker-client-cs) | Unity 게임 클라이언트 (비공개) | C# |
 
 ---
 
