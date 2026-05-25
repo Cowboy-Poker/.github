@@ -1,12 +1,12 @@
 # 🤠 Cowboy Poker
 
-> **서부 시대 술집에서 펼쳐지는 텍사스 홀덤과 1:1 권총 결투의 만남**
+> **서부 시대 술집에서 펼쳐지는 텍사스 홀덤과 1:1 총격 결투의 만남**
 
 ---
 
 ## 👋 소개
 
-- **Cowboy Poker**는 서부 시대 술집을 배경으로, 카우보이들이 모여 **텍사스 홀덤 포커**를 즐기다가 시비가 붙으면 **술집 밖으로 나가 1:1 권총 결투**를 벌이는 멀티플레이 게임입니다.
+- **Cowboy Poker**는 서부 시대 술집을 배경으로, 카우보이들이 모여 **텍사스 홀덤 포커**를 즐기다가 시비가 붙으면 **술집 밖으로 나가 1:1 총격 결투**를 벌이는 멀티플레이 게임입니다.
 - 포커 테이블에서 칩을 잃거나 상대를 도발하면, 포커 판이 그대로 **3D 슈팅 배틀 씬**으로 이어지며 **패배자는 계정이 삭제되고 보유한 돈 전부를 승자에게 빼앗깁니다.** 한 방에 모든 걸 걸어야 하는 **하이리스크 콘셉트**가 핵심 재미 요소입니다.
 - 신뢰성이 중요한 **로그인·포커 베팅·결과 정산**은 **Node.js TCP 서버**가, 실시간 위치 동기화·발사·피격 같은 **저지연 결투 흐름**은 **C++ UDP 서버**가 분담하여 처리합니다.
 
@@ -123,6 +123,7 @@
 ### Backend — C++ (UDP, 로비/결투)
 
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![IOCP](https://img.shields.io/badge/IOCP-0078D4?style=for-the-badge&logo=windows&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white)
@@ -175,7 +176,7 @@
 | 저장소 | 역할 | 언어 |
 |--------|------|------|
 | [`cowboy-poker-server-node`](https://github.com/Cowboy-Poker/cowboy-poker-server-node) | 로그인 · 회원가입 · 포커 게임 · 베팅 · 정산 (TCP) | Node.js |
-| [`cowboy-poker-server-cpp`](https://github.com/Cowboy-Poker/cowboy-poker-server-cpp) | 로비 동기화 · 1:1 권총 결투 (UDP) | C++17 |
+| [`cowboy-poker-server-cpp`](https://github.com/Cowboy-Poker/cowboy-poker-server-cpp) | 로비 동기화 · 1:1 총격 결투 (UDP) | C++17 |
 | [`cowboy-poker-protocols`](https://github.com/Cowboy-Poker/cowboy-poker-protocols) | `.proto` 파일 · packetTypes (Node.js / C++ / C# 공유) | Protobuf |
 | [`cowboy-poker-client-unity`](https://github.com/Cowboy-Poker/cowboy-poker-client-cs) | Unity 게임 클라이언트 (비공개) | C# |
 
@@ -333,7 +334,7 @@ user:{userId}  (Hash)
 
 <br>
 
-6. **포커 → 1:1 권총 결투 연계**
+6. **포커 → 1:1 총격 결투 연계**
 
 <p align="center">
   <img src="./assets/Enter_Battle.gif" width="700" alt="포커 씬에서 배틀 입장"/>
